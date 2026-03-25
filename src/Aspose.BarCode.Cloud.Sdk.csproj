@@ -13,7 +13,7 @@
 
 Aspose.Barcode for Cloud allows you to control all aspects of the image and barcode when generating barcode images. Specify image width, height, border style, output image format and more. You can also set barcode attributes like font style, font color, background color, barcode type and the barcode text location.</Description>
     <PackageProjectUrl>https://products.aspose.cloud/barcode/net/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dotnet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -28,7 +28,7 @@ Aspose.Barcode for Cloud allows you to control all aspects of the image and barc
     <Authors>Aspose</Authors>
     <AssemblyVersion>26.3.0.0</AssemblyVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dotnet/releases/tag/v26.3.0</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/releases/tag/v26.3.0</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
