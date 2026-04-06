@@ -14,5 +14,5 @@ pushd "${SRC_DIR}"
 export RELEASE_BUILD=true
 dotnet build --warnaserror --configuration=Release Aspose.BarCode.Cloud.Sdk.csproj
 echo "Packing nuget package to \"${output_dir}\" ..."
-dotnet pack --configuration=Release Aspose.BarCode.Cloud.Sdk.csproj --output="${output_dir}"
+dotnet pack --configuration=Release Aspose.BarCode.Cloud.Sdk.csproj -p:PackageOutputPath="${output_dir}"
 popd

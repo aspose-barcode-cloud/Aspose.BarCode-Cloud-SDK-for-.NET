@@ -1,9 +1,9 @@
 # Aspose.BarCode Cloud SDK for .NET
 
-[![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dotnet/actions/workflows/dotnet-core.yml)
-[![License](https://img.shields.io/github/license/aspose-barcode-cloud/aspose-barcode-cloud-dotnet)](LICENSE)
-[![.NET Core Linux](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dotnet/actions/workflows/dotnet-core.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dotnet/actions/workflows/dotnet-core.yml)
-[![.NET Framework Windows](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dotnet/actions/workflows/net-framework.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/aspose-barcode-cloud-dotnet/actions/workflows/net-framework.yml)
+[![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4)](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/dotnet-core.yml)
+[![License](https://img.shields.io/github/license/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET)](LICENSE)
+[![.NET Core Linux](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/dotnet-core.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/dotnet-core.yml)
+[![.NET Framework Windows](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/net-framework.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/net-framework.yml)
 [![Nuget](https://img.shields.io/nuget/v/Aspose.BarCode-Cloud)](https://www.nuget.org/packages/Aspose.BarCode-Cloud/)
 
 - API version: 4.0
