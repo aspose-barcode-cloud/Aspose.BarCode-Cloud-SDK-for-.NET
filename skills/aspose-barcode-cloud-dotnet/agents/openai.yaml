@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aspose.BarCode Cloud .NET"
+  short_description: "Write C# barcode code with Aspose Cloud"
+  default_prompt: "Use $aspose-barcode-cloud-dotnet to write or update .NET code that generates, recognizes, or scans barcodes with Aspose.BarCode Cloud."

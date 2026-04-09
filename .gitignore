@@ -8,3 +8,5 @@ obj
 *.binlog
 snippets_test/
 *.nupkg
+
+/NetFrameworkTests/Configuration.json
