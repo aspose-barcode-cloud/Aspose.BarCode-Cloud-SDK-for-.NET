@@ -26,18 +26,18 @@ jobs:
     continue-on-error: true
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Setup .NET 10 SDK
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '10.0.x'
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.1
+      uses: microsoft/setup-msbuild@v3
 
     - name: Setup VSTest
-      uses: darenm/Setup-VSTest@v1.2
+      uses: darenm/Setup-VSTest@v1.3
 
     - name: Pack nuget
       run: |

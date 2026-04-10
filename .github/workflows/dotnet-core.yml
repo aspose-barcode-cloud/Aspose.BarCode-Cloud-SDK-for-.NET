@@ -26,14 +26,14 @@ jobs:
     continue-on-error: true
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Setup latest version of dotnet
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
     - name: Build with latest version
       run: dotnet build --warnaserror Aspose.BarCode.Cloud.Sdk.sln
 
     - name: Setup ${{ matrix.dotnet-version }} version of dotnet
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
 
