@@ -40,7 +40,7 @@ The complete source code is available in this repository folder. You can either 
 
 ## AI Agent Skills
 
-This repository includes an AI-agent skill in [`skills/aspose-barcode-cloud-dotnet/SKILL.md`](skills/aspose-barcode-cloud-dotnet/SKILL.md). Point your coding agent to it when working with this SDK so it follows the repo workflow and SDK-specific API patterns.
+This repository includes an AI-agent skill in [`skills/generate-and-scan-barcode-dotnet/SKILL.md`](skills/generate-and-scan-barcode-dotnet/SKILL.md). Point your coding agent to it when working with this SDK so it follows the repo workflow and SDK-specific API patterns.
 
 ## Prerequisites
 
@@ -256,4 +256,3 @@ Class | Method | HTTP request | Description
 - [Model.RecognizeBase64Request](docs/RecognizeBase64Request.md)
 - [Model.RegionPoint](docs/RegionPoint.md)
 - [Model.ScanBase64Request](docs/ScanBase64Request.md)
-

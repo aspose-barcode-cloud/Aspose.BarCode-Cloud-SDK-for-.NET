@@ -1,9 +1,9 @@
 ---
-name: aspose-barcode-cloud-dotnet
+name: generate-and-scan-barcode-dotnet
 description: Write or update C#/.NET code that uses the Aspose.BarCode Cloud SDK (`Aspose.BarCode.Cloud.Sdk.*` namespaces; NuGet package `Aspose.BarCode-Cloud`) to generate, recognize, or scan barcodes through Aspose's cloud REST API. Use this skill whenever the user wants barcode work in C#/.NET, touches files under `submodules/dotnet`, or mentions `GenerateApi`, `RecognizeApi`, `ScanApi`, `Configuration`, `GenerateParams`, `RecognizeBase64Request`, or `ScanBase64Request`. The SDK has several easy-to-miss idioms - `Stream` return values, `JwtToken` switching auth mode, GET methods requiring a public `fileUrl`, `RecognizeBase64Async`/`ScanBase64Async` naming, and the `(clientSecret, clientId)` convenience-constructor order - so consult this skill instead of guessing.
 ---
 
-# Aspose.BarCode Cloud SDK for .NET
+# Generate and scan barcode in .NET
 
 The .NET SDK is a thin generated client over the Aspose BarCode Cloud REST API. Most tasks boil down to choosing the right API class (`GenerateApi`, `RecognizeApi`, `ScanApi`), choosing the right transport variant (GET, body/base64, or multipart), and setting up `Configuration` correctly.
 
