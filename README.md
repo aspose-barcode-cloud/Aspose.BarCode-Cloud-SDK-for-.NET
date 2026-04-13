@@ -38,6 +38,10 @@ To use these SDKs, you will need Client Id and Client Secret which can be looked
 
 The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [NuGet distribution](https://www.nuget.org/packages/Aspose.BarCode-Cloud/) (recommended).
 
+## AI Agent Skills
+
+This repository includes an AI-agent skill in [`skills/generate-and-scan-barcode-dotnet/SKILL.md`](skills/generate-and-scan-barcode-dotnet/SKILL.md). Point your coding agent to it when working with this SDK so it follows the repo workflow and SDK-specific API patterns.
+
 ## Prerequisites
 
 To use Aspose.BarCode Cloud SDK for .NET you need to register an account with [Aspose Cloud](https://www.aspose.cloud) and lookup/create Client Secret and Client Id at [Cloud Dashboard](https://dashboard.aspose.cloud/applications). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/).
@@ -252,4 +256,3 @@ Class | Method | HTTP request | Description
 - [Model.RecognizeBase64Request](docs/RecognizeBase64Request.md)
 - [Model.RegionPoint](docs/RegionPoint.md)
 - [Model.ScanBase64Request](docs/ScanBase64Request.md)
-

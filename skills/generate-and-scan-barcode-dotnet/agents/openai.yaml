@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate and scan barcode in .NET"
+  short_description: "Use Aspose.BarCode Cloud from .NET"
+  default_prompt: "Use $generate-and-scan-barcode-dotnet to write or update .NET code that generates, recognizes, or scans barcodes with Aspose.BarCode Cloud."
