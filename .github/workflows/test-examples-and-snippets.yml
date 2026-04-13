@@ -12,9 +12,9 @@ jobs:
     
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Setup latest version of dotnet
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
     - name: Build nuget with latest version
       run: |
          ./scripts/pack-nuget.bash
