@@ -5,7 +5,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
 {
 
     /// <summary>
-    ///     Subset of Aspose.Drawing.GraphicsUnit.
+    ///     Subset of https://reference.aspose.com/drawing/net/system.drawing/graphicsunit/
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum GraphicsUnit

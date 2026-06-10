@@ -32,14 +32,14 @@ internal static class Program
     public static async Task Main(string[] args)
     {
         string fileName = Path.GetFullPath(Path.Join("Tests", "test_data",
-            "Code39.jpeg"
+            "QrCustom.jpeg"
         ));
 
         GenerateApi generateApi = new GenerateApi(MakeConfiguration());
 
         var generateParams = new GenerateParams
         {
-            BarcodeType = EncodeBarcodeType.Code39,
+            BarcodeType = EncodeBarcodeType.QR,
             EncodeData = new EncodeData { Data = "Aspose", DataType = EncodeDataType.StringData },
             BarcodeImageParams = new BarcodeImageParams
             {
@@ -47,6 +47,13 @@ internal static class Program
                 BackgroundColor = "#FFFF00",
                 ImageFormat = BarcodeImageFormat.Jpeg,
                 RotationAngle = 90
+            },
+            QrParams = new QrParams
+            {
+                QrEncodeMode = QREncodeMode.Auto,
+                QrErrorLevel = QRErrorLevel.LevelM,
+                QrVersion = QRVersion.Auto,
+                QrAspectRatio = 0.75f
             }
         };
 

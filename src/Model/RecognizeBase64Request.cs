@@ -8,7 +8,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
 {
 
     /// <summary>
-    ///     Barcode recognize request
+    ///     Barcode recognition request.
     /// </summary>
     public class RecognizeBase64Request : IToString
     {
@@ -23,7 +23,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
         public RecognitionImageKind? RecognitionImageKind { get; set; }
 
         /// <summary>
-        ///     Array of decode types to find on barcode
+        ///     Array of barcode decode types to find.
         /// </summary>
         public List<DecodeBarcodeType> BarcodeTypes { get; set; }
 

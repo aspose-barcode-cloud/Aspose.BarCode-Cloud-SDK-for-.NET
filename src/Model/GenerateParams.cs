@@ -8,7 +8,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
 {
 
     /// <summary>
-    ///     Barcode generation parameters
+    ///     Barcode generation parameters.
     /// </summary>
     public class GenerateParams : IToString
     {
@@ -26,6 +26,21 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
         ///     Gets or sets BarcodeImageParams
         /// </summary>
         public BarcodeImageParams BarcodeImageParams { get; set; }
+
+        /// <summary>
+        ///     Gets or sets QrParams
+        /// </summary>
+        public QrParams QrParams { get; set; }
+
+        /// <summary>
+        ///     Gets or sets Code128Params
+        /// </summary>
+        public Code128Params Code128Params { get; set; }
+
+        /// <summary>
+        ///     Gets or sets Pdf417Params
+        /// </summary>
+        public Pdf417Params Pdf417Params { get; set; }
 
         /// <summary>
         ///     Get the string presentation of the object

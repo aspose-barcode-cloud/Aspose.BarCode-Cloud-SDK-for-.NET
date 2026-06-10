@@ -35,7 +35,11 @@ internal static class Program
                 EncodeBarcodeType.QR,
                 "QR code text",
                 textLocation: CodeLocation.None,
-                imageFormat: BarcodeImageFormat.Png
+                imageFormat: BarcodeImageFormat.Png,
+                qrEncodeMode: QREncodeMode.Auto,
+                qrErrorLevel: QRErrorLevel.LevelM,
+                qrVersion: QRVersion.Auto,
+                qrAspectRatio: 0.75f
             );
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

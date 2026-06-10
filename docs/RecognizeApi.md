@@ -4,9 +4,9 @@ All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**Recognize**](RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
-[**RecognizeBase64**](RecognizeApi.md#recognizebase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-[**RecognizeMultipart**](RecognizeApi.md#recognizemultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
+[**Recognize**](RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
+[**RecognizeBase64**](RecognizeApi.md#recognizebase64) | **POST** /barcode/recognize-body | Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
+[**RecognizeMultipart**](RecognizeApi.md#recognizemultipart) | **POST** /barcode/recognize-multipart | Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
 
 
 ## **Recognize**
@@ -15,16 +15,16 @@ Method | HTTP request | Description
 BarcodeResponseList Recognize (DecodeBarcodeType barcodeType, string fileUrl, RecognitionMode? recognitionMode = null, RecognitionImageKind? recognitionImageKind = null)
 ```
 
-Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
+Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use `recognize-body` or `recognize-multipart` endpoints instead.
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcodeType** | **DecodeBarcodeType**| Type of barcode to recognize |
- **fileUrl** | **string**| Url to barcode image |
- **recognitionMode** | **RecognitionMode?**| Recognition mode | [optional]
- **recognitionImageKind** | **RecognitionImageKind?**| Image kind for recognition | [optional]
+ **barcodeType** | **DecodeBarcodeType**| Type of barcode to recognize. |
+ **fileUrl** | **string**| URL to the barcode image. |
+ **recognitionMode** | **RecognitionMode?**| Recognition mode. | [optional]
+ **recognitionImageKind** | **RecognitionImageKind?**| Image kind for recognition. | [optional]
 
 ### Return type
 
@@ -42,13 +42,13 @@ Name | Type | Description  | Notes
 BarcodeResponseList RecognizeBase64 (RecognizeBase64Request recognizeBase64Request)
 ```
 
-Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **recognizeBase64Request** | [**RecognizeBase64Request**](RecognizeBase64Request.md)| Barcode recognition request |
+ **recognizeBase64Request** | [**RecognizeBase64Request**](RecognizeBase64Request.md)| Barcode recognition request. |
 
 ### Return type
 
@@ -66,14 +66,14 @@ Name | Type | Description  | Notes
 BarcodeResponseList RecognizeMultipart (DecodeBarcodeType barcodeType, System.IO.Stream file, RecognitionMode? recognitionMode = null, RecognitionImageKind? recognitionImageKind = null)
 ```
 
-Recognize barcode from file in request body using POST requests with parameters in multipart form.
+Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
  **barcodeType** | **DecodeBarcodeType**|  |
- **file** | **System.IO.Stream****System.IO.Stream**| Barcode image file |
+ **file** | **System.IO.Stream****System.IO.Stream**| Barcode image file. |
  **recognitionMode** | **RecognitionMode?**|  | [optional]
  **recognitionImageKind** | **RecognitionImageKind?**|  | [optional]
 

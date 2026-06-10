@@ -3,6 +3,9 @@ set -euo pipefail
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-python "${SCRIPT_DIR}/insert-examples.py" "README.template" "README.md"
+tmp_readme="$(mktemp README.md.XXXXXX)"
+trap 'rm -f "$tmp_readme"' EXIT
 
-rm "README.template"
+python3 "${SCRIPT_DIR}/insert-examples.py" "README.template" "$tmp_readme"
+mv "$tmp_readme" "README.md"
+trap - EXIT

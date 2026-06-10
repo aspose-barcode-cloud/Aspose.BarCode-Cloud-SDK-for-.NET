@@ -5,7 +5,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
 {
 
     /// <summary>
-    ///     See Aspose.BarCode.BarCodeRecognition.DecodeType
+    ///     See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DecodeBarcodeType

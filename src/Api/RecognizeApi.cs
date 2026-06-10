@@ -84,12 +84,12 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
         {
         }
         /// <summary>
-        /// Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
+        /// Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
         /// </summary>
-        /// <param name="barcodeType">Type of barcode to recognize</param>
-        /// <param name="fileUrl">Url to barcode image</param>
-        /// <param name="recognitionMode">Recognition mode (optional)</param>
-        /// <param name="recognitionImageKind">Image kind for recognition (optional)</param>
+        /// <param name="barcodeType">Type of barcode to recognize.</param>
+        /// <param name="fileUrl">URL to the barcode image.</param>
+        /// <param name="recognitionMode">Recognition mode. (optional)</param>
+        /// <param name="recognitionImageKind">Image kind for recognition. (optional)</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="BarcodeResponseList" />
@@ -133,9 +133,9 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
 
         }
         /// <summary>
-        /// Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
+        /// Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
         /// </summary>
-        /// <param name="recognizeBase64Request">Barcode recognition request</param>
+        /// <param name="recognizeBase64Request">Barcode recognition request.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="BarcodeResponseList" />
@@ -167,10 +167,10 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
 
         }
         /// <summary>
-        /// Recognize barcode from file in request body using POST requests with parameters in multipart form.
+        /// Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
         /// </summary>
         /// <param name="barcodeType"></param>
-        /// <param name="file">Barcode image file</param>
+        /// <param name="file">Barcode image file.</param>
         /// <param name="recognitionMode"> (optional)</param>
         /// <param name="recognitionImageKind"> (optional)</param>
         /// <param name="cancellationToken"></param>
