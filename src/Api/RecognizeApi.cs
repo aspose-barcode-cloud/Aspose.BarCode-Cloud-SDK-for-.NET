@@ -109,14 +109,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 .Replace("/?", "?");
 #pragma warning disable CS0618 // Type or member is obsolete
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "barcodeType", barcodeType);
-
-
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "fileUrl", fileUrl);
-
-
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "recognitionMode", recognitionMode);
-
-
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "recognitionImageKind", recognitionImageKind);
 #pragma warning restore CS0618 // Type or member is obsolete
 
@@ -169,10 +163,10 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
         /// <summary>
         /// Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
         /// </summary>
-        /// <param name="barcodeType"></param>
+        /// <param name="barcodeType">See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/</param>
         /// <param name="file">Barcode image file.</param>
-        /// <param name="recognitionMode"> (optional)</param>
-        /// <param name="recognitionImageKind"> (optional)</param>
+        /// <param name="recognitionMode">Recognition mode. (optional)</param>
+        /// <param name="recognitionImageKind">Image kind for recognition. (optional)</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="BarcodeResponseList" />
@@ -194,19 +188,16 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
 
             multipartContent.Add(new StringContent($"{barcodeType}"), "barcodeType");
 
-
             if (file != null)
             {
 
                 multipartContent.Add(new StreamContent(file), "file", "file.png");
 
             }
-
             if (recognitionMode != null)
             {
                 multipartContent.Add(new StringContent($"{recognitionMode}"), "recognitionMode");
             }
-
             if (recognitionImageKind != null)
             {
                 multipartContent.Add(new StringContent($"{recognitionImageKind}"), "recognitionImageKind");

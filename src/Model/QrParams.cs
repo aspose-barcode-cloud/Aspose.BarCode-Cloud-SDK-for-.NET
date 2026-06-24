@@ -13,32 +13,32 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
     public class QrParams : IToString
     {
         /// <summary>
-        ///     Gets or sets QrEncodeMode
+        ///     QR barcode encode mode.
         /// </summary>
         public QREncodeMode? QrEncodeMode { get; set; }
 
         /// <summary>
-        ///     Gets or sets QrErrorLevel
+        ///     QR barcode error correction level.
         /// </summary>
         public QRErrorLevel? QrErrorLevel { get; set; }
 
         /// <summary>
-        ///     Gets or sets QrVersion
+        ///     QR barcode version. Automatically selects the smallest version that fits the data.
         /// </summary>
         public QRVersion? QrVersion { get; set; }
 
         /// <summary>
-        ///     Gets or sets QrECIEncoding
+        ///     ECI encoding for QR barcode data.
         /// </summary>
         public ECIEncodings? QrECIEncoding { get; set; }
 
         /// <summary>
-        ///     Gets or sets MicroQRVersion
+        ///     MicroQR barcode version. Used when BarcodeType is MicroQR.
         /// </summary>
         public MicroQRVersion? MicroQRVersion { get; set; }
 
         /// <summary>
-        ///     Gets or sets RectMicroQrVersion
+        ///     RectMicroQR barcode version. Used when BarcodeType is RectMicroQR.
         /// </summary>
         public RectMicroQRVersion? RectMicroQrVersion { get; set; }
 

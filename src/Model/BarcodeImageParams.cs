@@ -13,17 +13,17 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
     public class BarcodeImageParams : IToString
     {
         /// <summary>
-        ///     Gets or sets ImageFormat
+        ///     Barcode output image format. Default value: png.
         /// </summary>
         public BarcodeImageFormat? ImageFormat { get; set; }
 
         /// <summary>
-        ///     Gets or sets TextLocation
+        ///     Specify the displayed text location. Set to CodeLocation.None to hide CodeText. Default value depends on BarcodeType: CodeLocation.Below for 1D barcodes and CodeLocation.None for 2D barcodes.
         /// </summary>
         public CodeLocation? TextLocation { get; set; }
 
         /// <summary>
-        ///     Gets or sets Units
+        ///     Common units for all measurements. Default units: pixels.
         /// </summary>
         public GraphicsUnit? Units { get; set; }
 

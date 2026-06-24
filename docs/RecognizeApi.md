@@ -72,10 +72,10 @@ Recognize a barcode from a file in the request body using a POST request with mu
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcodeType** | **DecodeBarcodeType**|  |
+ **barcodeType** | **DecodeBarcodeType**| See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/ |
  **file** | **System.IO.Stream****System.IO.Stream**| Barcode image file. |
- **recognitionMode** | **RecognitionMode?**|  | [optional]
- **recognitionImageKind** | **RecognitionImageKind?**|  | [optional]
+ **recognitionMode** | **RecognitionMode?**| Recognition mode. | [optional]
+ **recognitionImageKind** | **RecognitionImageKind?**| Image kind for recognition. | [optional]
 
 ### Return type
 

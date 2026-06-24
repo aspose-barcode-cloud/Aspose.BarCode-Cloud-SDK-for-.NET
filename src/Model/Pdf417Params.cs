@@ -13,22 +13,22 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
     public class Pdf417Params : IToString
     {
         /// <summary>
-        ///     Gets or sets Pdf417EncodeMode
+        ///     PDF417 barcode encode mode.
         /// </summary>
         public Pdf417EncodeMode? Pdf417EncodeMode { get; set; }
 
         /// <summary>
-        ///     Gets or sets Pdf417ErrorLevel
+        ///     PDF417 barcode error correction level.
         /// </summary>
         public Pdf417ErrorLevel? Pdf417ErrorLevel { get; set; }
 
         /// <summary>
-        ///     Gets or sets Pdf417ECIEncoding
+        ///     ECI encoding for PDF417 barcode data.
         /// </summary>
         public ECIEncodings? Pdf417ECIEncoding { get; set; }
 
         /// <summary>
-        ///     Gets or sets Pdf417MacroCharacters
+        ///     Macro character to prepend (structured append).
         /// </summary>
         public MacroCharacter? Pdf417MacroCharacters { get; set; }
 

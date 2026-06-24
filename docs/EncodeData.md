@@ -6,5 +6,5 @@ Data to encode in a barcode.
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**DataType** | **EncodeDataType** |  | [optional]
+**DataType** | **EncodeDataType** | Type of data to encode. Default value: StringData. | [optional]
 **Data** | **string** | String that represents the data to encode. |

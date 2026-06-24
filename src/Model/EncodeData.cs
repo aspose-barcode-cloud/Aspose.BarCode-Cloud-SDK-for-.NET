@@ -13,7 +13,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
     public class EncodeData : IToString
     {
         /// <summary>
-        ///     Gets or sets DataType
+        ///     Type of data to encode. Default value: StringData.
         /// </summary>
         public EncodeDataType? DataType { get; set; }
 
