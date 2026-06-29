@@ -109,7 +109,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
         protected static Stream GetTestImage(string fileName)
         {
             string filePath = TestFilePath(fileName);
-            return File.Open(filePath, FileMode.Open, FileAccess.Read);
+            return File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
         }
     }
 }
