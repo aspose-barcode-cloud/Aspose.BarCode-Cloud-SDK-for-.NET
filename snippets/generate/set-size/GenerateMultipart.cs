@@ -39,10 +39,13 @@ internal static class Program
 
 
         Stream generated = await generateApi.GenerateMultipartAsync(EncodeBarcodeType.Aztec, "Aspose.BarCode.Cloud",
-                    imageHeight: 200,
-                    imageWidth: 200,
-                    resolution: 150,
-                    units: GraphicsUnit.Point);
+            barcodeImageParams: new BarcodeImageParams
+            {
+                ImageHeight = 200,
+                ImageWidth = 200,
+                Resolution = 150,
+                Units = GraphicsUnit.Point
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

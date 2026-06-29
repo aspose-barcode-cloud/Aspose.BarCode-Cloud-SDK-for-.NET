@@ -38,11 +38,13 @@ internal static class Program
         GenerateApi generateApi = new GenerateApi(MakeConfiguration());
 
         Stream generated = await generateApi.GenerateAsync(EncodeBarcodeType.QR, "Aspose.BarCode.Cloud",
-                        imageHeight: 200,
-                        imageWidth: 200,
-                        resolution: 300,
-                        units: GraphicsUnit.Pixel
-            );
+            barcodeImageParams: new BarcodeImageParams
+            {
+                ImageHeight = 200,
+                ImageWidth = 200,
+                Resolution = 300,
+                Units = GraphicsUnit.Pixel
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

@@ -16,7 +16,7 @@ ln -sv -F "../$SNIPPETS_DIR/Snippets.csproj" ./Snippets.csproj
 ln -sv -F "../$SNIPPETS_DIR/nuget.config" ./nuget.config
 popd
 
-for file in $(find "${SNIPPETS_DIR}" -name "*.cs"); do
+for file in $(find "${SNIPPETS_DIR}" \( -type d \( -name bin -o -name obj \) -prune \) -o -type f -name "*.cs" -print); do
     ${SCRIPT_DIR}/run_snippet.sh "$file" $RUN_DIR $SCRIPT_DIR $CONFIG_FILE_PATH || { echo "Error processing $file"; exit 1; }
 done
 
