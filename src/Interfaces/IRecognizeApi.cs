@@ -44,10 +44,10 @@ namespace Aspose.BarCode.Cloud.Sdk.Interfaces
         ///
         /// </remarks>
         /// <exception cref="Aspose.BarCode.Cloud.Sdk.Api.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="barcodeType"></param>
+        /// <param name="barcodeType">See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/</param>
         /// <param name="file">Barcode image file.</param>
-        /// <param name="recognitionMode"></param>
-        /// <param name="recognitionImageKind"></param>
+        /// <param name="recognitionMode">Recognition mode.</param>
+        /// <param name="recognitionImageKind">Image kind for recognition.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BarcodeResponseList</returns>
         Task<BarcodeResponseList> RecognizeMultipartAsync(DecodeBarcodeType barcodeType, System.IO.Stream file, RecognitionMode? recognitionMode = default, RecognitionImageKind? recognitionImageKind = default, System.Threading.CancellationToken cancellationToken = default);

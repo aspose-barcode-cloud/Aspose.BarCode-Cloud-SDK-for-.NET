@@ -18,7 +18,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
         public string RequestId { get; set; }
 
         /// <summary>
-        ///     Gets or sets Error
+        ///     Gets or sets error.
         /// </summary>
         public ApiError Error { get; set; }
 

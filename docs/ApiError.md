@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **Message** | **string** | Gets or sets error message. |
 **Description** | **string** | Gets or sets error description. | [optional]
 **DateTime** | **DateTime?** | Gets or sets server datetime. | [optional]
-**InnerError** | [**ApiError**](ApiError.md) |  | [optional]
+**InnerError** | [**ApiError**](ApiError.md) | Gets or sets inner error. | [optional]

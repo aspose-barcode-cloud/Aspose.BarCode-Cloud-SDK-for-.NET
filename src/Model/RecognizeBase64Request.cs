@@ -13,12 +13,12 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
     public class RecognizeBase64Request : IToString
     {
         /// <summary>
-        ///     Gets or sets RecognitionMode
+        ///     Barcode recognition mode.
         /// </summary>
         public RecognitionMode? RecognitionMode { get; set; }
 
         /// <summary>
-        ///     Gets or sets RecognitionImageKind
+        ///     Image kind for recognition.
         /// </summary>
         public RecognitionImageKind? RecognitionImageKind { get; set; }
 

@@ -13,7 +13,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
     public class Code128Params : IToString
     {
         /// <summary>
-        ///     Gets or sets Code128EncodeMode
+        ///     Code128 barcode encode mode. Controls which Code 128 subset (A, B, C, or mix) is used.
         /// </summary>
         public Code128EncodeMode? Code128EncodeMode { get; set; }
 
