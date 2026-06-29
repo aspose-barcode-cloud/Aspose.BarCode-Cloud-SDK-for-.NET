@@ -41,3 +41,30 @@ jobs:
       run: dotnet test --verbosity normal --framework ${{ matrix.framework }}
       env:
         TEST_CONFIGURATION_JWT_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
+
+  coverage:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Setup .NET 10
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Test with library coverage threshold
+      run: |
+        dotnet test Tests/Aspose.BarCode.Cloud.Sdk.Tests.csproj \
+          --framework net10.0 \
+          --verbosity normal \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=cobertura \
+          /p:CoverletOutput=./TestResults/Coverage/ \
+          '/p:Include=[Aspose.BarCode.Cloud.Sdk]*' \
+          '/p:Exclude=[Aspose.BarCode.Cloud.Sdk.Tests]*' \
+          '/p:ExcludeByFile=**/obj/**/*.cs' \
+          /p:Threshold=80 \
+          /p:ThresholdType=line
+      env:
+        TEST_CONFIGURATION_JWT_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
