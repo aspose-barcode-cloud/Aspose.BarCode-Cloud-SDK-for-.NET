@@ -21,7 +21,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
                 async () =>
                 {
                     await api.GenerateAsync(data: "Very sample text",
-                barcodeType: EncodeBarcodeType.Code128, imageFormat: BarcodeImageFormat.Png);
+                barcodeType: EncodeBarcodeType.Code128, barcodeImageParams: new BarcodeImageParams { ImageFormat = BarcodeImageFormat.Png });
                 });
 
             Assert.AreEqual(400, ex!.ErrorCode);

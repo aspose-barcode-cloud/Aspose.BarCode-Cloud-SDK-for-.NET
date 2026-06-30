@@ -84,9 +84,9 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
         {
         }
         /// <summary>
-        /// Scan barcode from file on server in the Internet using GET requests with parameter in query string. For scaning files from your hard drive use &#x60;scan-body&#x60; or &#x60;scan-multipart&#x60; endpoints instead.
+        /// Scan a barcode from a file on an Internet server using a GET request with a query string parameter. For scanning files from your hard drive, use &#x60;scan-body&#x60; or &#x60;scan-multipart&#x60; endpoints instead.
         /// </summary>
-        /// <param name="fileUrl">Url to barcode image</param>
+        /// <param name="fileUrl">URL to the barcode image.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="BarcodeResponseList" />
@@ -121,9 +121,9 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
 
         }
         /// <summary>
-        /// Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
+        /// Scan a barcode from a file in the request body using a POST request with a JSON or XML body parameter.
         /// </summary>
-        /// <param name="scanBase64Request">Barcode scan request</param>
+        /// <param name="scanBase64Request">Barcode scan request.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="BarcodeResponseList" />
@@ -155,9 +155,9 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
 
         }
         /// <summary>
-        /// Scan barcode from file in request body using POST requests with parameter in multipart form.
+        /// Scan a barcode from a file in the request body using a POST request with a multipart form parameter.
         /// </summary>
-        /// <param name="file">Barcode image file</param>
+        /// <param name="file">Barcode image file.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="BarcodeResponseList" />

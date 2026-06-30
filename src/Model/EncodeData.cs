@@ -8,17 +8,17 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
 {
 
     /// <summary>
-    ///     Data to encode in barcode
+    ///     Data to encode in a barcode.
     /// </summary>
     public class EncodeData : IToString
     {
         /// <summary>
-        ///     Gets or sets DataType
+        ///     Type of data to encode. Default value: StringData.
         /// </summary>
         public EncodeDataType? DataType { get; set; }
 
         /// <summary>
-        ///     String represents data to encode
+        ///     String that represents the data to encode.
         /// </summary>
         public string Data { get; set; }
 

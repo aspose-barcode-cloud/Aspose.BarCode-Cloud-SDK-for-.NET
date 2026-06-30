@@ -37,7 +37,13 @@ internal static class Program
 
         GenerateApi generateApi = new GenerateApi(MakeConfiguration());
 
-        Stream generated = await generateApi.GenerateMultipartAsync(EncodeBarcodeType.Code128, "4173706F73652E426172436F64652E436C6F7564", dataType: EncodeDataType.HexBytes);
+        Stream generated = await generateApi.GenerateMultipartAsync(EncodeBarcodeType.Code128,
+            "4173706F73652E426172436F64652E436C6F7564",
+            dataType: EncodeDataType.HexBytes,
+            code128Params: new Code128Params
+            {
+                Code128EncodeMode = Code128EncodeMode.Auto
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

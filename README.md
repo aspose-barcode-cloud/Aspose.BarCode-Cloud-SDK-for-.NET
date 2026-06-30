@@ -7,7 +7,7 @@
 [![Nuget](https://img.shields.io/nuget/v/Aspose.BarCode-Cloud)](https://www.nuget.org/packages/Aspose.BarCode-Cloud/)
 
 - API version: 4.0
-- SDK version: 26.5.0
+- SDK version: 26.6.0
 
 ## SDK and API Version Compatibility:
 
@@ -179,8 +179,18 @@ internal static class Program
         await using Stream generated = await api.GenerateAsync(
                 EncodeBarcodeType.QR,
                 "QR code text",
-                textLocation: CodeLocation.None,
-                imageFormat: BarcodeImageFormat.Png
+                barcodeImageParams: new BarcodeImageParams
+                {
+                    TextLocation = CodeLocation.None,
+                    ImageFormat = BarcodeImageFormat.Png
+                },
+                qrParams: new QrParams
+                {
+                    QrEncodeMode = QREncodeMode.Auto,
+                    QrErrorLevel = QRErrorLevel.LevelM,
+                    QrVersion = QRVersion.Auto,
+                    QrAspectRatio = 0.75f
+                }
             );
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);
@@ -226,15 +236,15 @@ All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
-*GenerateApi* | [**Generate**](docs/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
-*GenerateApi* | [**GenerateBody**](docs/GenerateApi.md#generatebody) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-*GenerateApi* | [**GenerateMultipart**](docs/GenerateApi.md#generatemultipart) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
-*RecognizeApi* | [**Recognize**](docs/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart` endpoints instead.
-*RecognizeApi* | [**RecognizeBase64**](docs/RecognizeApi.md#recognizebase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-*RecognizeApi* | [**RecognizeMultipart**](docs/RecognizeApi.md#recognizemultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
-*ScanApi* | [**Scan**](docs/ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server in the Internet using GET requests with parameter in query string. For scaning files from your hard drive use `scan-body` or `scan-multipart` endpoints instead.
-*ScanApi* | [**ScanBase64**](docs/ScanApi.md#scanbase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-*ScanApi* | [**ScanMultipart**](docs/ScanApi.md#scanmultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
+*GenerateApi* | [**Generate**](docs/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate a barcode using a GET request with parameters in the route and query string.
+*GenerateApi* | [**GenerateBody**](docs/GenerateApi.md#generatebody) | **POST** /barcode/generate-body | Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
+*GenerateApi* | [**GenerateMultipart**](docs/GenerateApi.md#generatemultipart) | **POST** /barcode/generate-multipart | Generate a barcode using a POST request with parameters in a multipart form.
+*RecognizeApi* | [**Recognize**](docs/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use `recognize-body` or `recognize-multipart` endpoints instead.
+*RecognizeApi* | [**RecognizeBase64**](docs/RecognizeApi.md#recognizebase64) | **POST** /barcode/recognize-body | Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
+*RecognizeApi* | [**RecognizeMultipart**](docs/RecognizeApi.md#recognizemultipart) | **POST** /barcode/recognize-multipart | Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
+*ScanApi* | [**Scan**](docs/ScanApi.md#scan) | **GET** /barcode/scan | Scan a barcode from a file on an Internet server using a GET request with a query string parameter. For scanning files from your hard drive, use `scan-body` or `scan-multipart` endpoints instead.
+*ScanApi* | [**ScanBase64**](docs/ScanApi.md#scanbase64) | **POST** /barcode/scan-body | Scan a barcode from a file in the request body using a POST request with a JSON or XML body parameter.
+*ScanApi* | [**ScanMultipart**](docs/ScanApi.md#scanmultipart) | **POST** /barcode/scan-multipart | Scan a barcode from a file in the request body using a POST request with a multipart form parameter.
 
 ## Documentation for Models
 
@@ -244,15 +254,28 @@ Class | Method | HTTP request | Description
 - [Model.BarcodeImageParams](docs/BarcodeImageParams.md)
 - [Model.BarcodeResponse](docs/BarcodeResponse.md)
 - [Model.BarcodeResponseList](docs/BarcodeResponseList.md)
+- [Model.Code128EncodeMode](docs/Code128EncodeMode.md)
+- [Model.Code128Params](docs/Code128Params.md)
 - [Model.CodeLocation](docs/CodeLocation.md)
 - [Model.DecodeBarcodeType](docs/DecodeBarcodeType.md)
+- [Model.ECIEncodings](docs/ECIEncodings.md)
 - [Model.EncodeBarcodeType](docs/EncodeBarcodeType.md)
 - [Model.EncodeData](docs/EncodeData.md)
 - [Model.EncodeDataType](docs/EncodeDataType.md)
 - [Model.GenerateParams](docs/GenerateParams.md)
 - [Model.GraphicsUnit](docs/GraphicsUnit.md)
+- [Model.MacroCharacter](docs/MacroCharacter.md)
+- [Model.MicroQRVersion](docs/MicroQRVersion.md)
+- [Model.Pdf417EncodeMode](docs/Pdf417EncodeMode.md)
+- [Model.Pdf417ErrorLevel](docs/Pdf417ErrorLevel.md)
+- [Model.Pdf417Params](docs/Pdf417Params.md)
+- [Model.QREncodeMode](docs/QREncodeMode.md)
+- [Model.QRErrorLevel](docs/QRErrorLevel.md)
+- [Model.QRVersion](docs/QRVersion.md)
+- [Model.QrParams](docs/QrParams.md)
 - [Model.RecognitionImageKind](docs/RecognitionImageKind.md)
 - [Model.RecognitionMode](docs/RecognitionMode.md)
 - [Model.RecognizeBase64Request](docs/RecognizeBase64Request.md)
+- [Model.RectMicroQRVersion](docs/RectMicroQRVersion.md)
 - [Model.RegionPoint](docs/RegionPoint.md)
 - [Model.ScanBase64Request](docs/ScanBase64Request.md)

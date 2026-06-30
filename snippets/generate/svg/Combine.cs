@@ -65,7 +65,10 @@ internal static class Program
         await using Stream generated = await api.GenerateAsync(
             barcodeType: barcodeType,
             data: data,
-            imageFormat: BarcodeImageFormat.Svg);
+            barcodeImageParams: new BarcodeImageParams
+            {
+                ImageFormat = BarcodeImageFormat.Svg
+            });
 
         using var reader = new StreamReader(generated, Utf8NoBom, detectEncodingFromByteOrderMarks: true);
         return await reader.ReadToEndAsync();

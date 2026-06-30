@@ -8,7 +8,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
 {
 
     /// <summary>
-    ///     Represents information about barcode.
+    ///     Represents information about a barcode.
     /// </summary>
     public class BarcodeResponse : IToString
     {
@@ -23,12 +23,12 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
         public string Type { get; set; }
 
         /// <summary>
-        ///     Region with barcode.
+        ///     Region with the barcode.
         /// </summary>
         public List<RegionPoint> Region { get; set; }
 
         /// <summary>
-        ///     Checksum of barcode.
+        ///     Checksum of the barcode.
         /// </summary>
         public string Checksum { get; set; }
 

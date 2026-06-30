@@ -1,6 +1,6 @@
 # Aspose.BarCode.Cloud.Sdk.Model.EncodeBarcodeType
 
-See Aspose.BarCode.Generation.EncodeTypes
+See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/
 
 ## Allowable values
 

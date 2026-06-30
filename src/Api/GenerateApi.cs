@@ -84,25 +84,20 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
         {
         }
         /// <summary>
-        /// Generate barcode using GET request with parameters in route and query string.
+        /// Generate a barcode using a GET request with parameters in the route and query string.
         /// </summary>
         /// <param name="barcodeType">Type of barcode to generate.</param>
-        /// <param name="data">String represents data to encode</param>
+        /// <param name="data">String that represents the data to encode.</param>
         /// <param name="dataType">Type of data to encode. Default value: StringData. (optional)</param>
-        /// <param name="imageFormat">Barcode output image format. Default value: png (optional)</param>
-        /// <param name="textLocation">Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D Barcodes. (optional)</param>
-        /// <param name="foregroundColor">Specify the displaying bars and content Color. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: Black. (optional, default to &quot;Black&quot;)</param>
-        /// <param name="backgroundColor">Background color of the barcode image. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: White. (optional, default to &quot;White&quot;)</param>
-        /// <param name="units">Common Units for all measuring in query. Default units: pixel. (optional)</param>
-        /// <param name="resolution">Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. Decimal separator is dot. (optional)</param>
-        /// <param name="imageHeight">Height of the barcode image in given units. Default units: pixel. Decimal separator is dot. (optional)</param>
-        /// <param name="imageWidth">Width of the barcode image in given units. Default units: pixel. Decimal separator is dot. (optional)</param>
-        /// <param name="rotationAngle">BarCode image rotation angle, measured in degree, e.g. RotationAngle &#x3D; 0 or RotationAngle &#x3D; 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0. (optional)</param>
+        /// <param name="barcodeImageParams">Grouped parameters of type BarcodeImageParams (optional)</param>
+        /// <param name="qrParams">Grouped parameters of type QrParams (optional)</param>
+        /// <param name="code128Params">Grouped parameters of type Code128Params (optional)</param>
+        /// <param name="pdf417Params">Grouped parameters of type Pdf417Params (optional)</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="System.IO.Stream" />
         /// </returns>
-        public async Task<System.IO.Stream> GenerateAsync(EncodeBarcodeType barcodeType, string data, EncodeDataType? dataType = default, BarcodeImageFormat? imageFormat = default, CodeLocation? textLocation = default, string foregroundColor = default, string backgroundColor = default, GraphicsUnit? units = default, float? resolution = default, float? imageHeight = default, float? imageWidth = default, int? rotationAngle = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<System.IO.Stream> GenerateAsync(EncodeBarcodeType barcodeType, string data, EncodeDataType? dataType = default, BarcodeImageParams barcodeImageParams = default, QrParams qrParams = default, Code128Params code128Params = default, Pdf417Params pdf417Params = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'data' is set
             if (data == null)
@@ -118,36 +113,35 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
             resourcePath = UrlHelper.AddPathParameter(resourcePath, "barcodeType", barcodeType);
 #pragma warning disable CS0618 // Type or member is obsolete
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "dataType", dataType);
-
-
             resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "data", data);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageFormat", imageFormat);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "textLocation", textLocation);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "foregroundColor", foregroundColor);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "backgroundColor", backgroundColor);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "units", units);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resolution", resolution);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageHeight", imageHeight);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageWidth", imageWidth);
-
-
-            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "rotationAngle", rotationAngle);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageFormat", barcodeImageParams?.ImageFormat);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "textLocation", barcodeImageParams?.TextLocation);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "foregroundColor", barcodeImageParams?.ForegroundColor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "backgroundColor", barcodeImageParams?.BackgroundColor);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "units", barcodeImageParams?.Units);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "resolution", barcodeImageParams?.Resolution);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageHeight", barcodeImageParams?.ImageHeight);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "imageWidth", barcodeImageParams?.ImageWidth);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "rotationAngle", barcodeImageParams?.RotationAngle);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "qrEncodeMode", qrParams?.QrEncodeMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "qrErrorLevel", qrParams?.QrErrorLevel);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "qrVersion", qrParams?.QrVersion);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "qrECIEncoding", qrParams?.QrECIEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "qrAspectRatio", qrParams?.QrAspectRatio);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "microQRVersion", qrParams?.MicroQRVersion);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "rectMicroQrVersion", qrParams?.RectMicroQrVersion);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "code128EncodeMode", code128Params?.Code128EncodeMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417EncodeMode", pdf417Params?.Pdf417EncodeMode);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417ErrorLevel", pdf417Params?.Pdf417ErrorLevel);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417Truncate", pdf417Params?.Pdf417Truncate);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417Columns", pdf417Params?.Pdf417Columns);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417Rows", pdf417Params?.Pdf417Rows);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417AspectRatio", pdf417Params?.Pdf417AspectRatio);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417ECIEncoding", pdf417Params?.Pdf417ECIEncoding);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417IsReaderInitialization", pdf417Params?.Pdf417IsReaderInitialization);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417MacroCharacters", pdf417Params?.Pdf417MacroCharacters);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417IsLinked", pdf417Params?.Pdf417IsLinked);
+            resourcePath = UrlHelper.AddQueryParameterToUrl(resourcePath, "pdf417IsCode128Emulation", pdf417Params?.Pdf417IsCode128Emulation);
 #pragma warning restore CS0618 // Type or member is obsolete
 
 
@@ -159,9 +153,9 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 null);
         }
         /// <summary>
-        /// Generate barcode using POST request with parameters in body in json or xml format.
+        /// Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
         /// </summary>
-        /// <param name="generateParams">Parameters of generation</param>
+        /// <param name="generateParams">Generation parameters.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="System.IO.Stream" />
@@ -189,25 +183,20 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 null);
         }
         /// <summary>
-        /// Generate barcode using POST request with parameters in multipart form.
+        /// Generate a barcode using a POST request with parameters in a multipart form.
         /// </summary>
-        /// <param name="barcodeType"></param>
-        /// <param name="data">String represents data to encode</param>
-        /// <param name="dataType"> (optional)</param>
-        /// <param name="imageFormat"> (optional)</param>
-        /// <param name="textLocation"> (optional)</param>
-        /// <param name="foregroundColor">Specify the displaying bars and content Color. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: Black. (optional, default to &quot;Black&quot;)</param>
-        /// <param name="backgroundColor">Background color of the barcode image. Value: Color name from https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #. For example: AliceBlue or #FF000000 Default value: White. (optional, default to &quot;White&quot;)</param>
-        /// <param name="units"> (optional)</param>
-        /// <param name="resolution">Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi. Decimal separator is dot. (optional)</param>
-        /// <param name="imageHeight">Height of the barcode image in given units. Default units: pixel. Decimal separator is dot. (optional)</param>
-        /// <param name="imageWidth">Width of the barcode image in given units. Default units: pixel. Decimal separator is dot. (optional)</param>
-        /// <param name="rotationAngle">BarCode image rotation angle, measured in degree, e.g. RotationAngle &#x3D; 0 or RotationAngle &#x3D; 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the difficulty for the scanner to read the image. Default value: 0. (optional)</param>
+        /// <param name="barcodeType">See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/</param>
+        /// <param name="data">String that represents the data to encode.</param>
+        /// <param name="dataType">Type of data to encode. Default value: StringData. (optional)</param>
+        /// <param name="barcodeImageParams">Grouped parameters of type BarcodeImageParams (optional)</param>
+        /// <param name="qrParams">Grouped parameters of type QrParams (optional)</param>
+        /// <param name="code128Params">Grouped parameters of type Code128Params (optional)</param>
+        /// <param name="pdf417Params">Grouped parameters of type Pdf417Params (optional)</param>
         /// <param name="cancellationToken"></param>
         /// <returns>
         /// A task that represents the asynchronous operation. Task result type is  <see cref="System.IO.Stream" />
         /// </returns>
-        public async Task<System.IO.Stream> GenerateMultipartAsync(EncodeBarcodeType barcodeType, string data, EncodeDataType? dataType = default, BarcodeImageFormat? imageFormat = default, CodeLocation? textLocation = default, string foregroundColor = default, string backgroundColor = default, GraphicsUnit? units = default, float? resolution = default, float? imageHeight = default, float? imageWidth = default, int? rotationAngle = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<System.IO.Stream> GenerateMultipartAsync(EncodeBarcodeType barcodeType, string data, EncodeDataType? dataType = default, BarcodeImageParams barcodeImageParams = default, QrParams qrParams = default, Code128Params code128Params = default, Pdf417Params pdf417Params = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'data' is set
             if (data == null)
@@ -224,60 +213,125 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
 
             multipartContent.Add(new StringContent($"{barcodeType}"), "barcodeType");
 
-
             if (dataType != null)
             {
                 multipartContent.Add(new StringContent($"{dataType}"), "dataType");
             }
-
             if (data != null)
             {
                 multipartContent.Add(new StringContent($"{data}"), "data");
             }
-
-            if (imageFormat != null)
+            if (barcodeImageParams?.ImageFormat != null)
             {
-                multipartContent.Add(new StringContent($"{imageFormat}"), "imageFormat");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.ImageFormat}"), "imageFormat");
             }
-
-            if (textLocation != null)
+            if (barcodeImageParams?.TextLocation != null)
             {
-                multipartContent.Add(new StringContent($"{textLocation}"), "textLocation");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.TextLocation}"), "textLocation");
             }
-
-            if (foregroundColor != null)
+            if (barcodeImageParams?.ForegroundColor != null)
             {
-                multipartContent.Add(new StringContent($"{foregroundColor}"), "foregroundColor");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.ForegroundColor}"), "foregroundColor");
             }
-
-            if (backgroundColor != null)
+            if (barcodeImageParams?.BackgroundColor != null)
             {
-                multipartContent.Add(new StringContent($"{backgroundColor}"), "backgroundColor");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.BackgroundColor}"), "backgroundColor");
             }
-
-            if (units != null)
+            if (barcodeImageParams?.Units != null)
             {
-                multipartContent.Add(new StringContent($"{units}"), "units");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.Units}"), "units");
             }
-
-            if (resolution != null)
+            if (barcodeImageParams?.Resolution != null)
             {
-                multipartContent.Add(new StringContent($"{resolution}"), "resolution");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.Resolution}"), "resolution");
             }
-
-            if (imageHeight != null)
+            if (barcodeImageParams?.ImageHeight != null)
             {
-                multipartContent.Add(new StringContent($"{imageHeight}"), "imageHeight");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.ImageHeight}"), "imageHeight");
             }
-
-            if (imageWidth != null)
+            if (barcodeImageParams?.ImageWidth != null)
             {
-                multipartContent.Add(new StringContent($"{imageWidth}"), "imageWidth");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.ImageWidth}"), "imageWidth");
             }
-
-            if (rotationAngle != null)
+            if (barcodeImageParams?.RotationAngle != null)
             {
-                multipartContent.Add(new StringContent($"{rotationAngle}"), "rotationAngle");
+                multipartContent.Add(new StringContent($"{barcodeImageParams?.RotationAngle}"), "rotationAngle");
+            }
+            if (qrParams?.QrEncodeMode != null)
+            {
+                multipartContent.Add(new StringContent($"{qrParams?.QrEncodeMode}"), "qrEncodeMode");
+            }
+            if (qrParams?.QrErrorLevel != null)
+            {
+                multipartContent.Add(new StringContent($"{qrParams?.QrErrorLevel}"), "qrErrorLevel");
+            }
+            if (qrParams?.QrVersion != null)
+            {
+                multipartContent.Add(new StringContent($"{qrParams?.QrVersion}"), "qrVersion");
+            }
+            if (qrParams?.QrECIEncoding != null)
+            {
+                multipartContent.Add(new StringContent($"{qrParams?.QrECIEncoding}"), "qrECIEncoding");
+            }
+            if (qrParams?.QrAspectRatio != null)
+            {
+                multipartContent.Add(new StringContent($"{qrParams?.QrAspectRatio}"), "qrAspectRatio");
+            }
+            if (qrParams?.MicroQRVersion != null)
+            {
+                multipartContent.Add(new StringContent($"{qrParams?.MicroQRVersion}"), "microQRVersion");
+            }
+            if (qrParams?.RectMicroQrVersion != null)
+            {
+                multipartContent.Add(new StringContent($"{qrParams?.RectMicroQrVersion}"), "rectMicroQrVersion");
+            }
+            if (code128Params?.Code128EncodeMode != null)
+            {
+                multipartContent.Add(new StringContent($"{code128Params?.Code128EncodeMode}"), "code128EncodeMode");
+            }
+            if (pdf417Params?.Pdf417EncodeMode != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417EncodeMode}"), "pdf417EncodeMode");
+            }
+            if (pdf417Params?.Pdf417ErrorLevel != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417ErrorLevel}"), "pdf417ErrorLevel");
+            }
+            if (pdf417Params?.Pdf417Truncate != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417Truncate}"), "pdf417Truncate");
+            }
+            if (pdf417Params?.Pdf417Columns != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417Columns}"), "pdf417Columns");
+            }
+            if (pdf417Params?.Pdf417Rows != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417Rows}"), "pdf417Rows");
+            }
+            if (pdf417Params?.Pdf417AspectRatio != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417AspectRatio}"), "pdf417AspectRatio");
+            }
+            if (pdf417Params?.Pdf417ECIEncoding != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417ECIEncoding}"), "pdf417ECIEncoding");
+            }
+            if (pdf417Params?.Pdf417IsReaderInitialization != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417IsReaderInitialization}"), "pdf417IsReaderInitialization");
+            }
+            if (pdf417Params?.Pdf417MacroCharacters != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417MacroCharacters}"), "pdf417MacroCharacters");
+            }
+            if (pdf417Params?.Pdf417IsLinked != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417IsLinked}"), "pdf417IsLinked");
+            }
+            if (pdf417Params?.Pdf417IsCode128Emulation != null)
+            {
+                multipartContent.Add(new StringContent($"{pdf417Params?.Pdf417IsCode128Emulation}"), "pdf417IsCode128Emulation");
             }
 
 

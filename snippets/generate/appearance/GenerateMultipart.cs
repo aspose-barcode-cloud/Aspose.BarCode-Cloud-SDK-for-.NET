@@ -39,9 +39,17 @@ internal static class Program
 
         var generated = await generateApi.GenerateMultipartAsync(barcodeType: EncodeBarcodeType.Pdf417,
             data: "Aspose.BarCode.Cloud",
-            textLocation: CodeLocation.Above,
-            imageFormat: BarcodeImageFormat.Svg
-            );
+            barcodeImageParams: new BarcodeImageParams
+            {
+                TextLocation = CodeLocation.Above,
+                ImageFormat = BarcodeImageFormat.Svg
+            },
+            pdf417Params: new Pdf417Params
+            {
+                Pdf417EncodeMode = Pdf417EncodeMode.Auto,
+                Pdf417ErrorLevel = Pdf417ErrorLevel.Level2,
+                Pdf417AspectRatio = 3
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

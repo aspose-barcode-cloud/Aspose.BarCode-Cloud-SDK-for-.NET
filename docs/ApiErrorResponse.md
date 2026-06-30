@@ -7,4 +7,4 @@ ApiError Response
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
 **RequestId** | **string** | Gets or sets request Id. |
-**Error** | [**ApiError**](ApiError.md) |  |
+**Error** | [**ApiError**](ApiError.md) | Gets or sets error. |

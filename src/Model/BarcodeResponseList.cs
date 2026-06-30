@@ -8,12 +8,12 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
 {
 
     /// <summary>
-    ///     Represents information about barcode list.
+    ///     Represents information about a barcode list.
     /// </summary>
     public class BarcodeResponseList : IToString
     {
         /// <summary>
-        ///     List of barcodes which are present in image.
+        ///     List of barcodes that are present in the image.
         /// </summary>
         public List<BarcodeResponse> Barcodes { get; set; }
 

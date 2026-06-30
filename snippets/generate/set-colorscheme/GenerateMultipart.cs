@@ -38,9 +38,12 @@ internal static class Program
         GenerateApi generateApi = new GenerateApi(MakeConfiguration());
 
         Stream generated = await generateApi.GenerateMultipartAsync(EncodeBarcodeType.Code39, "Aspose",
-                        foregroundColor: "Green",
-                        backgroundColor: "Yellow",
-                        imageFormat: BarcodeImageFormat.Gif);
+            barcodeImageParams: new BarcodeImageParams
+            {
+                ForegroundColor = "Green",
+                BackgroundColor = "Yellow",
+                ImageFormat = BarcodeImageFormat.Gif
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

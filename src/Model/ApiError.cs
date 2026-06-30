@@ -33,7 +33,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        ///     Gets or sets InnerError
+        ///     Gets or sets inner error.
         /// </summary>
         public ApiError InnerError { get; set; }
 

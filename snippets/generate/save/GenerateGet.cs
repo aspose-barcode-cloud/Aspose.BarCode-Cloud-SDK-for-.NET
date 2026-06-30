@@ -37,7 +37,15 @@ internal static class Program
 
         GenerateApi generateApi = new GenerateApi(MakeConfiguration());
 
-        using var generated = await generateApi.GenerateAsync(EncodeBarcodeType.Code128, "Aspose.BarCode.Cloud", imageFormat: BarcodeImageFormat.Png);
+        using var generated = await generateApi.GenerateAsync(EncodeBarcodeType.Code128, "Aspose.BarCode.Cloud",
+            barcodeImageParams: new BarcodeImageParams
+            {
+                ImageFormat = BarcodeImageFormat.Png
+            },
+            code128Params: new Code128Params
+            {
+                Code128EncodeMode = Code128EncodeMode.Auto
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

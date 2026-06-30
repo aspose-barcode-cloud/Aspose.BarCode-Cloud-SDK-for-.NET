@@ -39,9 +39,12 @@ internal static class Program
 
         Stream generated = await generateApi.GenerateAsync(EncodeBarcodeType.QR,
             "https://products.aspose.cloud/barcode/family/",
-            foregroundColor: "DarkBlue",
-            backgroundColor: "LightGray",
-            imageFormat: BarcodeImageFormat.Png);
+            barcodeImageParams: new BarcodeImageParams
+            {
+                ForegroundColor = "DarkBlue",
+                BackgroundColor = "LightGray",
+                ImageFormat = BarcodeImageFormat.Png
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

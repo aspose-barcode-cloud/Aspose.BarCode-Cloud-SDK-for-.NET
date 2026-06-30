@@ -1,6 +1,6 @@
 # Aspose.BarCode.Cloud.Sdk.Model.EncodeDataType
 
-Types of data can be encoded to barcode
+Types of data that can be encoded into a barcode.
 
 ## Allowable values
 

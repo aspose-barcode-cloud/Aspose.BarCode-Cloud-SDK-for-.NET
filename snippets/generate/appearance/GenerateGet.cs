@@ -37,15 +37,25 @@ internal static class Program
 
         GenerateApi generateApi = new GenerateApi(MakeConfiguration());
 
-        var generated = await generateApi.GenerateAsync( barcodeType: EncodeBarcodeType.QR,
+        var generated = await generateApi.GenerateAsync(barcodeType: EncodeBarcodeType.QR,
             data: "Aspose.BarCode.Cloud",
-            imageFormat: BarcodeImageFormat.Png,
-            foregroundColor: "Black",
-            backgroundColor: "White",
-            textLocation: CodeLocation.Below,
-            resolution: 300,
-            imageHeight: 200,
-            imageWidth: 200);
+            barcodeImageParams: new BarcodeImageParams
+            {
+                ImageFormat = BarcodeImageFormat.Png,
+                ForegroundColor = "Black",
+                BackgroundColor = "White",
+                TextLocation = CodeLocation.Below,
+                Resolution = 300,
+                ImageHeight = 200,
+                ImageWidth = 200
+            },
+            qrParams: new QrParams
+            {
+                QrEncodeMode = QREncodeMode.Auto,
+                QrErrorLevel = QRErrorLevel.LevelM,
+                QrVersion = QRVersion.Auto,
+                QrAspectRatio = 0.75f
+            });
 
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);

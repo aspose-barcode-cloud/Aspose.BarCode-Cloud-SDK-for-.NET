@@ -1,6 +1,6 @@
 # Aspose.BarCode.Cloud.Sdk.Model.DecodeBarcodeType
 
-See Aspose.BarCode.BarCodeRecognition.DecodeType
+See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/
 
 ## Allowable values
 

@@ -34,8 +34,18 @@ internal static class Program
         await using Stream generated = await api.GenerateAsync(
                 EncodeBarcodeType.QR,
                 "QR code text",
-                textLocation: CodeLocation.None,
-                imageFormat: BarcodeImageFormat.Png
+                barcodeImageParams: new BarcodeImageParams
+                {
+                    TextLocation = CodeLocation.None,
+                    ImageFormat = BarcodeImageFormat.Png
+                },
+                qrParams: new QrParams
+                {
+                    QrEncodeMode = QREncodeMode.Auto,
+                    QrErrorLevel = QRErrorLevel.LevelM,
+                    QrVersion = QRVersion.Auto,
+                    QrAspectRatio = 0.75f
+                }
             );
         await using FileStream stream = File.Create(fileName);
         await generated.CopyToAsync(stream);
