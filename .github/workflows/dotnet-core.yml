@@ -6,8 +6,16 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-test:
+    name: Build and test
     runs-on: ubuntu-22.04
 
     strategy:
@@ -27,6 +35,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
     - name: Setup latest version of dotnet
       uses: actions/setup-dotnet@v5
     - name: Build with latest version
@@ -43,10 +53,13 @@ jobs:
         TEST_CONFIGURATION_JWT_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
 
   coverage:
+    name: Library coverage
     runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
 
     - name: Setup .NET 10
       uses: actions/setup-dotnet@v5

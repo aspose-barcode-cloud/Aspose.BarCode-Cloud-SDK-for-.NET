@@ -6,11 +6,21 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   pack-nuget:
+    name: Pack NuGet package
     runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
     - name: Build the Docker image
       run: docker build . --file Dockerfile
