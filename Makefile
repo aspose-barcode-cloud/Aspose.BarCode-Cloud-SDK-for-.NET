@@ -28,6 +28,22 @@ test: nuget
 	dotnet test -v normal --framework=net$(LATEST_SDK_VERSION)
 	./scripts/run_snippets.sh
 
+# Line coverage of the SDK library (coverlet names the report after the framework
+# because the test project multi-targets); the gate (COVERAGE_THRESHOLD, default 80) is the
+# shared scripts/coverage.py, which also writes coverage/coverage-{badge,summary}.json.
+.PHONY: cover
+cover:
+	rm -rf ./coverage
+	dotnet test Tests/Aspose.BarCode.Cloud.Sdk.Tests.csproj \
+		--framework=net$(LATEST_SDK_VERSION) \
+		/p:CollectCoverage=true \
+		/p:CoverletOutputFormat=cobertura \
+		/p:CoverletOutput=$(CURDIR)/coverage/ \
+		'/p:Include=[Aspose.BarCode.Cloud.Sdk]*' \
+		'/p:Exclude=[Aspose.BarCode.Cloud.Sdk.Tests]*' \
+		'/p:ExcludeByFile=**/obj/**/*.cs'
+	python3 scripts/coverage.py cobertura coverage/coverage.net$(LATEST_SDK_VERSION).cobertura.xml
+
 .PHONY: build
 build:
 	dotnet build -v normal --framework=net$(LATEST_SDK_VERSION)
