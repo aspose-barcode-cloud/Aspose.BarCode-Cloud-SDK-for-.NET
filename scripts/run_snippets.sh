@@ -12,8 +12,8 @@ mkdir -p "${RUN_DIR}"
 
 pushd ${RUN_DIR}
 cp ../*.nupkg .
-ln -sv -F "../$SNIPPETS_DIR/Snippets.csproj" ./Snippets.csproj
-ln -sv -F "../$SNIPPETS_DIR/nuget.config" ./nuget.config
+ln -sv "../$SNIPPETS_DIR/Snippets.csproj" ./Snippets.csproj
+ln -sv "../$SNIPPETS_DIR/nuget.config" ./nuget.config
 popd
 
 for file in $(find "${SNIPPETS_DIR}" \( -type d \( -name bin -o -name obj \) -prune \) -o -type f -name "*.cs" -print); do
