@@ -9,6 +9,7 @@ obj
 snippets_test/
 *.nupkg
 TestResults/
+/coverage/
 /NetFrameworkTests/Results/
 
 /NetFrameworkTests/Configuration.json
