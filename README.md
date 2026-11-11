@@ -5,7 +5,6 @@
 [![.NET Core Linux](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/dotnet-core.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/dotnet-core.yml)
 [![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/aspose-barcode-cloud/test-coverage/main/dotnet/coverage-badge.json)](https://github.com/aspose-barcode-cloud/test-coverage)
 [![.NET Framework Windows](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/net-framework.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/net-framework.yml)
-[![zizmor](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/zizmor.yml/badge.svg?branch=main)](https://github.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-.NET/actions/workflows/zizmor.yml)
 [![Nuget](https://img.shields.io/nuget/v/Aspose.BarCode-Cloud)](https://www.nuget.org/packages/Aspose.BarCode-Cloud/)
 
 - API version: 4.0
