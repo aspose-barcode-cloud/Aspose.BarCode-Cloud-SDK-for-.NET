@@ -58,6 +58,17 @@ namespace Aspose.BarCode.Cloud.Sdk.Interfaces
         /// <returns>Task of System.IO.Stream</returns>
         Task<System.IO.Stream> GenerateAsync(EncodeBarcodeType barcodeType, string data, EncodeDataType? dataType = default, BarcodeImageParams barcodeImageParams = default, QrParams qrParams = default, Code128Params code128Params = default, Pdf417Params pdf417Params = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+        /// </summary>
+        /// <remarks>
+        ///
+        /// </remarks>
+        /// <exception cref="Aspose.BarCode.Cloud.Sdk.Api.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="batchGenerateRequest">Batch generation request in JSON or XML format.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        Task<System.IO.Stream> GenerateBatchAsync(BatchGenerateRequest batchGenerateRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
         /// </summary>
         /// <remarks>

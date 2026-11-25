@@ -428,7 +428,12 @@ namespace Aspose.BarCode.Cloud.Sdk.Model
         /// <summary>
         ///     Enum value VIN
         /// </summary>
-        VIN
+        VIN,
+
+        /// <summary>
+        ///     Enum value JapanPost
+        /// </summary>
+        JapanPost
 
     }
 }

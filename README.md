@@ -8,12 +8,24 @@
 [![Nuget](https://img.shields.io/nuget/v/Aspose.BarCode-Cloud)](https://www.nuget.org/packages/Aspose.BarCode-Cloud/)
 
 - API version: 4.0
-- SDK version: 26.10.0
+- SDK version: 26.11.0
 
 ## SDK and API Version Compatibility:
 
 - SDK Version 25.1 and Later: Starting from SDK version 25.1, all subsequent versions are compatible with API Version v4.0.
 - SDK Version 24.12 and Earlier: These versions are compatible with API Version v3.0.
+
+## Batch Generation
+
+Generate one to three barcodes in a single request with the Generate API and
+`BatchGenerateRequest`. Choose `Zip` (the default), `Tar` or `TarGzip`
+for the returned binary archive. Each item contains generation parameters and an optional
+file name; the image format is independent of the file extension.
+
+[Save a batch as a ZIP archive](snippets/generate/batch/GenerateBatch.cs).
+The example reads `TEST_CONFIGURATION_ACCESS_TOKEN` from the environment.
+
+The barcode-type enums also include `JapanPost` for generation and recognition.
 
 ## Demo applications
 
@@ -238,6 +250,7 @@ All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
 *GenerateApi* | [**Generate**](docs/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate a barcode using a GET request with parameters in the route and query string.
+*GenerateApi* | [**GenerateBatch**](docs/GenerateApi.md#generatebatch) | **POST** /barcode/generate-batch | Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
 *GenerateApi* | [**GenerateBody**](docs/GenerateApi.md#generatebody) | **POST** /barcode/generate-body | Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 *GenerateApi* | [**GenerateMultipart**](docs/GenerateApi.md#generatemultipart) | **POST** /barcode/generate-multipart | Generate a barcode using a POST request with parameters in a multipart form.
 *RecognizeApi* | [**Recognize**](docs/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use `recognize-body` or `recognize-multipart` endpoints instead.
@@ -255,6 +268,9 @@ Class | Method | HTTP request | Description
 - [Model.BarcodeImageParams](docs/BarcodeImageParams.md)
 - [Model.BarcodeResponse](docs/BarcodeResponse.md)
 - [Model.BarcodeResponseList](docs/BarcodeResponseList.md)
+- [Model.BatchArchiveFormat](docs/BatchArchiveFormat.md)
+- [Model.BatchGenerateItem](docs/BatchGenerateItem.md)
+- [Model.BatchGenerateRequest](docs/BatchGenerateRequest.md)
 - [Model.Code128EncodeMode](docs/Code128EncodeMode.md)
 - [Model.Code128Params](docs/Code128Params.md)
 - [Model.CodeLocation](docs/CodeLocation.md)

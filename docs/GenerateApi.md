@@ -5,6 +5,7 @@ All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 Method | HTTP request | Description
 ------ | ------------ | -----------
 [**Generate**](GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate a barcode using a GET request with parameters in the route and query string.
+[**GenerateBatch**](GenerateApi.md#generatebatch) | **POST** /barcode/generate-batch | Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
 [**GenerateBody**](GenerateApi.md#generatebody) | **POST** /barcode/generate-body | Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 [**GenerateMultipart**](GenerateApi.md#generatemultipart) | **POST** /barcode/generate-multipart | Generate a barcode using a POST request with parameters in a multipart form.
 
@@ -61,6 +62,30 @@ System.IO.Stream
 
 - **Content-Type**: Not defined
 - **Accept**: image/png, image/bmp, image/gif, image/jpeg, image/svg+xml, image/tiff, application/json, application/xml
+
+
+## **GenerateBatch**
+
+```csharp
+System.IO.Stream GenerateBatch (BatchGenerateRequest batchGenerateRequest)
+```
+
+Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+
+### Parameters
+
+Name | Type | Description  | Notes
+---- | ---- | ------------ | -----
+ **batchGenerateRequest** | [**BatchGenerateRequest**](BatchGenerateRequest.md)| Batch generation request in JSON or XML format. |
+
+### Return type
+
+System.IO.Stream
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/zip, application/x-tar, application/gzip, application/json, application/xml
 
 
 ## **GenerateBody**
