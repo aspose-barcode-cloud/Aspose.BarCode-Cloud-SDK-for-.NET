@@ -114,7 +114,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                            "GET",
                            null,
                            null,
-                           null);
+                           null,
+                           cancellationToken: cancellationToken);
 
             return response != null ? (BarcodeResponseList)SerializationHelper.Deserialize(response, typeof(BarcodeResponseList)) : null;
 
@@ -148,7 +149,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                            "POST",
                            postBody,
                            null,
-                           null);
+                           null,
+                           cancellationToken: cancellationToken);
 
             return response != null ? (BarcodeResponseList)SerializationHelper.Deserialize(response, typeof(BarcodeResponseList)) : null;
 
@@ -189,7 +191,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                            "POST",
                            null,
                            null,
-                           multipartContent);
+                           multipartContent,
+                           cancellationToken: cancellationToken);
 
             return response != null ? (BarcodeResponseList)SerializationHelper.Deserialize(response, typeof(BarcodeResponseList)) : null;
 

@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Aspose.BarCode.Cloud.Sdk.Api;
 using Aspose.BarCode.Cloud.Sdk.Interfaces;
@@ -273,9 +274,11 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal
             string body,
             Dictionary<string, string> headerParams,
             HttpContent formParams,
+            CancellationToken cancellationToken,
             string contentType = "application/json")
         {
-            Stream responseStream = await InvokeInternalAsync(path, method, true, body, headerParams, formParams, contentType)
+            Stream responseStream = await InvokeInternalAsync(path, method, true, body, headerParams, formParams, contentType,
+                    cancellationToken)
                     as Stream;
             return responseStream;
         }
@@ -285,9 +288,11 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal
             string body,
             Dictionary<string, string> headerParams,
             HttpContent formParams,
+            CancellationToken cancellationToken,
             string contentType = "application/json")
         {
-            string response = await InvokeInternalAsync(path, method, false, body, headerParams, formParams, contentType) as string;
+            string response = await InvokeInternalAsync(path, method, false, body, headerParams, formParams, contentType,
+                cancellationToken) as string;
             return response;
         }
 
@@ -297,13 +302,14 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal
             string body,
             Dictionary<string, string> headerParams,
             HttpContent formParams,
-            string contentType)
+            string contentType,
+            CancellationToken cancellationToken)
         {
             if (headerParams == null)
             {
                 headerParams = new Dictionary<string, string>();
             }
-            await Task.WhenAll(_requestHandlers.Select(p => p.PreparingAsync()).ToArray());
+            await Task.WhenAll(_requestHandlers.Select(p => p.PreparingAsync(cancellationToken)).ToArray());
 
             using (HttpClient client = new HttpClient())
             {
@@ -333,23 +339,34 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal
 
                     await Task.WhenAll(_requestHandlers.Select(p => p.BeforeSendAsync(request)).ToArray());
 
-                    using (HttpResponseMessage response = await client.SendAsync(request))
+                    using (HttpResponseMessage response = await client.SendAsync(request, cancellationToken))
                     {
-                        await Task.WhenAll(_requestHandlers.Select(p => p.ProcessResponseAsync(response)).ToArray());
+                        await Task.WhenAll(_requestHandlers.Select(p => p.ProcessResponseAsync(response, cancellationToken)).ToArray());
 
                         if (response.Content != null)
                         {
+                            // netstandard2.0 HttpContent has no CancellationToken overloads:
+                            // copy binary content through its stream, check the token before reading text.
                             if (binaryResponse)
                             {
+                                Stream contentStream = await response.Content.ReadAsStreamAsync();
                                 MemoryStream resultStream = new MemoryStream();
-                                await response.Content.CopyToAsync(resultStream);
+                                try
+                                {
+                                    await contentStream.CopyToAsync(resultStream, 81920, cancellationToken);
+                                }
+                                catch
+                                {
+                                    resultStream.Dispose();
+                                    throw;
+                                }
+
                                 resultStream.Position = 0;
                                 return resultStream;
                             }
-                            else
-                            {
-                                return await response.Content.ReadAsStringAsync();
-                            }
+
+                            cancellationToken.ThrowIfCancellationRequested();
+                            return await response.Content.ReadAsStringAsync();
                         }
                     }
                 }

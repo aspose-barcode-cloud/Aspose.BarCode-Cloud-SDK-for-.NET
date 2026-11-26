@@ -150,7 +150,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 "GET",
                 null,
                 null,
-                null);
+                null,
+                cancellationToken: cancellationToken);
         }
         /// <summary>
         /// Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
@@ -180,7 +181,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 "POST",
                 postBody,
                 null,
-                null);
+                null,
+                cancellationToken: cancellationToken);
         }
         /// <summary>
         /// Generate a barcode using a POST request with parameters in a multipart form.
@@ -340,7 +342,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 "POST",
                 null,
                 null,
-                multipartContent);
+                multipartContent,
+                cancellationToken: cancellationToken);
         }
     }
 }

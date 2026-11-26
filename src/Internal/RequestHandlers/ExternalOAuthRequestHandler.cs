@@ -1,6 +1,7 @@
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Aspose.BarCode.Cloud.Sdk.Api;
 using Aspose.BarCode.Cloud.Sdk.Interfaces;
@@ -21,7 +22,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
 
         }
 
-        public Task PreparingAsync()
+        public Task PreparingAsync(CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
         }
@@ -52,7 +53,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
             return Task.CompletedTask;
         }
 
-        public Task ProcessResponseAsync(HttpResponseMessage response)
+        public Task ProcessResponseAsync(HttpResponseMessage response, CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
         }

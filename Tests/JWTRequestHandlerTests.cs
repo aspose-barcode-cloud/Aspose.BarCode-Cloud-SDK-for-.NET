@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Aspose.BarCode.Cloud.Sdk.Api;
 using Aspose.BarCode.Cloud.Sdk.Internal;
@@ -101,7 +102,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
 
             // arrange
             JwtRequestHandler jwtHandler = new JwtRequestHandler(TestConfiguration);
-            await jwtHandler.PreparingAsync();
+            await jwtHandler.PreparingAsync(CancellationToken.None);
 
             // act
             HttpRequestMessage request = new HttpRequestMessage();
@@ -135,7 +136,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
                 {
                     // Should manage 401, fetch new token and store it
                     // And throw NeedRepeatRequestException
-                    await jwtHandler.ProcessResponseAsync(response401);
+                    await jwtHandler.ProcessResponseAsync(response401, CancellationToken.None);
                 });
 
             // arrange
@@ -180,14 +181,14 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
         {
             JwtRequestHandler missingClientIdHandler = new JwtRequestHandler(new Configuration());
             ApiException missingClientId = Assert.ThrowsAsync<ApiException>(
-                async () => await missingClientIdHandler.PreparingAsync());
+                async () => await missingClientIdHandler.PreparingAsync(CancellationToken.None));
             Assert.AreEqual(403, missingClientId!.ErrorCode);
             Assert.AreEqual("Missing required parameter 'ClientId'", missingClientId.Message);
 
             JwtRequestHandler missingClientSecretHandler = new JwtRequestHandler(
                 new Configuration { ClientId = "client-id" });
             ApiException missingClientSecret = Assert.ThrowsAsync<ApiException>(
-                async () => await missingClientSecretHandler.PreparingAsync());
+                async () => await missingClientSecretHandler.PreparingAsync(CancellationToken.None));
             Assert.AreEqual(403, missingClientSecret!.ErrorCode);
             Assert.AreEqual("Missing required parameter 'ClientSecret'", missingClientSecret.Message);
 
@@ -219,7 +220,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
             JwtRequestHandler jwtHandler = new JwtRequestHandler(new Configuration());
 
             ApiException exception = Assert.ThrowsAsync<ApiException>(
-                async () => await jwtHandler.ProcessResponseAsync(response401));
+                async () => await jwtHandler.ProcessResponseAsync(response401, CancellationToken.None));
 
             Assert.AreEqual(403, exception!.ErrorCode);
             Assert.AreEqual("Missing required parameter 'ClientId'", exception.Message);
@@ -232,7 +233,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
             JwtRequestHandler jwtHandler = new JwtRequestHandler(configuration);
 
             jwtHandler.Preparing();
-            await jwtHandler.PreparingAsync();
+            await jwtHandler.PreparingAsync(CancellationToken.None);
 
             WebRequest syncRequest = _requestFactory.Object.Create("http://some url/");
             jwtHandler.BeforeSend(syncRequest, new MemoryStream());
@@ -243,7 +244,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Tests
             Assert.IsFalse(asyncRequest.Headers.Contains("Authorization"));
 
             jwtHandler.ProcessResponse(CreateResponse(HttpStatusCode.Unauthorized), new MemoryStream());
-            await jwtHandler.ProcessResponseAsync(new HttpResponseMessage(HttpStatusCode.Unauthorized));
+            await jwtHandler.ProcessResponseAsync(new HttpResponseMessage(HttpStatusCode.Unauthorized), CancellationToken.None);
         }
 
         private static Mock<IWebRequestFactory> RequestFactoryMock()
