@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Aspose.BarCode.Cloud.Sdk.Api;
 using Aspose.BarCode.Cloud.Sdk.Interfaces;
@@ -42,7 +43,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
             }
         }
 
-        public async Task PreparingAsync()
+        public async Task PreparingAsync(CancellationToken cancellationToken)
         {
             if (_configuration.AuthType != AuthType.JWT)
             {
@@ -51,7 +52,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
 
             if (string.IsNullOrEmpty(_accessToken))
             {
-                await RequestTokenAsync();
+                await RequestTokenAsync(cancellationToken);
             }
 
         }
@@ -119,7 +120,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
             _accessToken = result.AccessToken;
         }
 
-        private async Task RequestTokenAsync()
+        private async Task RequestTokenAsync(CancellationToken cancellationToken)
         {
             string postData = "grant_type=client_credentials";
 
@@ -143,7 +144,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
                 body: postData,
                 null,
                 null,
-                contentType: "application/x-www-form-urlencoded");
+                contentType: "application/x-www-form-urlencoded",
+                cancellationToken: cancellationToken);
 
             GetAccessTokenResult result = (GetAccessTokenResult)
                 SerializationHelper.Deserialize(responseString, typeof(GetAccessTokenResult));
@@ -159,10 +161,10 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
             RequestToken();
         }
 
-        private async Task RefreshTokenAsync()
+        private async Task RefreshTokenAsync(CancellationToken cancellationToken)
         {
             // Request new token instead of refresh for JWT
-            await RequestTokenAsync();
+            await RequestTokenAsync(cancellationToken);
         }
         public Task BeforeSendAsync(HttpRequestMessage request)
         {
@@ -182,7 +184,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
             return Task.CompletedTask;
         }
 
-        public async Task ProcessResponseAsync(HttpResponseMessage response)
+        public async Task ProcessResponseAsync(HttpResponseMessage response, CancellationToken cancellationToken)
         {
             if (_configuration.AuthType != AuthType.JWT)
             {
@@ -191,7 +193,7 @@ namespace Aspose.BarCode.Cloud.Sdk.Internal.RequestHandlers
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                await RefreshTokenAsync();
+                await RefreshTokenAsync(cancellationToken);
 
                 throw new NeedRepeatRequestException();
             }

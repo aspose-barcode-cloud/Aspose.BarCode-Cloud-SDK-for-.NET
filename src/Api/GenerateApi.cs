@@ -150,7 +150,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 "GET",
                 null,
                 null,
-                null);
+                null,
+                cancellationToken: cancellationToken);
         }
         /// <summary>
         /// Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
@@ -210,7 +211,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 "POST",
                 postBody,
                 null,
-                null);
+                null,
+                cancellationToken: cancellationToken);
         }
         /// <summary>
         /// Generate a barcode using a POST request with parameters in a multipart form.
@@ -370,7 +372,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 "POST",
                 null,
                 null,
-                multipartContent);
+                multipartContent,
+                cancellationToken: cancellationToken);
         }
     }
 }

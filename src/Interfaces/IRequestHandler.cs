@@ -1,6 +1,7 @@
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Aspose.BarCode.Cloud.Sdk.Interfaces
@@ -13,8 +14,8 @@ namespace Aspose.BarCode.Cloud.Sdk.Interfaces
 
         void ProcessResponse(HttpWebResponse response, Stream resultStream);
 
-        Task PreparingAsync();
+        Task PreparingAsync(CancellationToken cancellationToken);
         Task BeforeSendAsync(HttpRequestMessage request);
-        Task ProcessResponseAsync(HttpResponseMessage response);
+        Task ProcessResponseAsync(HttpResponseMessage response, CancellationToken cancellationToken);
     }
 }
