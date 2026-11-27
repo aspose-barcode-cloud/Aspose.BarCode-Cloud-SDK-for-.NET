@@ -153,6 +153,36 @@ namespace Aspose.BarCode.Cloud.Sdk.Api
                 null);
         }
         /// <summary>
+        /// Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+        /// </summary>
+        /// <param name="batchGenerateRequest">Batch generation request in JSON or XML format.</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>
+        /// A task that represents the asynchronous operation. Task result type is  <see cref="System.IO.Stream" />
+        /// </returns>
+        public async Task<System.IO.Stream> GenerateBatchAsync(BatchGenerateRequest batchGenerateRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'batchGenerateRequest' is set
+            if (batchGenerateRequest == null)
+            {
+                throw new ApiException(400, "Missing required parameter 'batchGenerateRequest' when calling GenerateBatch");
+            }
+            // create path and map variables
+            string resourcePath = _configuration.GetApiRootUrl() + "/barcode/generate-batch";
+            resourcePath = Regex
+                .Replace(resourcePath, "\\*", string.Empty)
+                .Replace("&amp;", "&")
+                .Replace("/?", "?");
+            string postBody = SerializationHelper.Serialize(batchGenerateRequest); // http body (model) parameter
+
+            return await _apiInvoker.InvokeBinaryApiAsync(
+                resourcePath,
+                "POST",
+                postBody,
+                null,
+                null);
+        }
+        /// <summary>
         /// Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
         /// </summary>
         /// <param name="generateParams">Generation parameters.</param>

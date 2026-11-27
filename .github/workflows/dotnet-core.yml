@@ -67,7 +67,7 @@ jobs:
         dotnet-version: 10.0.x
 
     - name: Test with library coverage threshold
-      run: make cover
+      run: make cover LATEST_SDK_VERSION=10.0
       env:
         TEST_CONFIGURATION_JWT_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
 

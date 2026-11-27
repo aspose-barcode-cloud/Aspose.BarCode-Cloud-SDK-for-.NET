@@ -88,3 +88,4 @@ See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/d
 * UPCA
 * UPCE
 * VIN
+* JapanPost
